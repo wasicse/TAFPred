@@ -1,0 +1,24 @@
+#!/bin/sh
+#purpose: gather PSSM 
+
+
+echo "It started"
+
+printf "\n-------------- run_OPAL------------------\n";
+for file in `cat id_list.txt` ;
+do 
+	inputfasta_path="./fastaInput";
+	Scoresoutput_path="./Output"
+	PSSMinput="./pssmInput"
+	PSSMpath="./SPIDER2_local_v1/misc"
+	file_name="1a1xA"
+	printf "\nID: "$file ;
+	printf "\n"
+	#cp /dev/null input.fasta
+	#cat input.fasta >> Scores_OPAL.txt
+	cp $PSSMinput/$file.mat $PSSMpath/$file_name.pssm
+	cp $inputfasta_path/$file.fasta ./input.fasta;
+	octave --eval Demo
+	cp ./Scores_OPAL.txt $Scoresoutput_path/$file.txt;
+	
+done

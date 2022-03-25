@@ -1,0 +1,54 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;
+;                                  SPOT-DISORDER2
+;
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+Hello user,
+Thank you for your interest in our predictor. SPOT-Disorde2 requires 
+several python (2.7) packages, please verify that they are installed before use:
+
+    tensorflow (v1.10)    ---> see https://www.tensorflow.org/install/
+    numpy
+    tqdm
+    cPickle
+
+It also requires SPIDER3, SPOT-1D, SPOT-Contact, PSI-BLAST, and HHBlits
+for prediction from the protein fasta/sequence files. Please ensure this are 
+installed and in working order. Please also ensure that the SPOT-Contact SS 
+probabilities are in the range of [0-1] (this was changed in early versions).
+
+PLEASE EDIT THE FILEPATHS IN "run_spotdis2.sh" BEFORE RUNNING TO THE CORRECT 
+LOCATIONS.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+USAGE:
+To run for a sample protein, please place all already-completed files (.spotcon,
+.fasta, .hhm, .pssm, .spot1d) into the "input" directory and run:
+
+    ./run_spotdis2.sh 
+
+The minimum needed is a fasta file. This code will skip the file creation if the
+required file can be found. This is particularly useful if you already have 
+generated your evolutionary profiles or the SPOT-Contact outputs, as these take 
+the longest by far.
+
+This commend generates all files needed for SPOT-Disorder2, and will also
+ generate an input list called "protlist.txt" which will be used by the program 
+"run_all_models.py". If you only want to run over some models, please create and
+use your own "protlist.txt".
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+PLEASE CITE!:
+If you use this predictor in your research, please cite:
+
+Hanson, J., Paliwal, K., Litfin, T., and Zhou, Y., Enhancing Protein Intrinsic Disorder Prediction by Utilizing Deep Squeeze and Excitation Residual Inception and Long Short-Term Memory Networks, 2018
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+Thanks again!
+Jack Hanson and the Sparks-lab team

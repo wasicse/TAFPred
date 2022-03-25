@@ -1,0 +1,8 @@
+#path to spider2-local/misc
+../SPIDER2_local_v1/misc
+#path to LibSVM
+/home/mkabir3/Research/0_Features/FEP_V6/Tools/Hoque10/OPAL/libsvm-3.22/matlab
+#path to PROMIS
+/home/mkabir3/Research/0_Features/FEP_V6/Tools/Hoque10/OPAL/PROMIS
+#path to MoRFchibi/MCS1.03
+./MCS1.03
