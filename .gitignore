@@ -1,0 +1,7 @@
+# ignore all . files and . folders
+.*
+!/.gitignore
+!/.dockerignore
+!/.python-version
+FeatureExtractionDocker
+Databases

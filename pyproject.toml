@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "TAFPred"
+version = "0.1.0"
+description = ""
+authors = ["Md Wasi Ul Kabir <mkabir3@uno.edu>"]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+pandas = "^1.4.1"
+ipykernel = "^6.9.2"
+pathlib = "^1.0.1"
+gdown = "^4.4.0"
+scipy = "^1.8.0"
+joblib = "^1.1.0"
+scikit-learn = "^1.0.2"
+lightgbm = "^3.3.2"
+wget = "^3.2"
+tensorflow = "^2.11.0"
+docker = "^6.0.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
