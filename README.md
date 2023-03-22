@@ -1,23 +1,22 @@
 #   TAFPred
 TAFPred: Torsion Angle Fluctuations Prediction from Protein Sequences
 
-### Table of Content
-- [TAFPred](#tafpred)
-    - [Table of Content](#table-of-content)
+# Table of Content
+
 - [Getting Started](#getting-started)
-  - [Datasets](#datasets)
-    - [Prerequisites](#prerequisites)
-  - [Download and install code](#download-and-install-code)
-  - [Authors](#authors)
-  - [References](#references)
+- [Datasets](#datasets)
+- [Prerequisites](#prerequisites)
+- [Download and install code](#download-and-install-code)
+- [Authors](#authors)
+- [References](#references)
 
 # Getting Started
  
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
- ## Datasets
-The dataset can be found in the Dataset/completeDataset directory. The dataset is collected from [1].
+### Datasets
+The dataset can be found in the Dataset/FullDataset directory. The dataset is collected from [1].
 
 
 ### Prerequisites
