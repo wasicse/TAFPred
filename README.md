@@ -57,11 +57,12 @@ We have tested Dispredict4.0 on Ubuntu 20.04. You would need to install the foll
 
 ```
 project
-│───README.md    
+│─── README.md    
 │
-└───Databases
-        nr
-        uniclust30_2017_04
+└─── script
+    └─── Databases
+           └─── nr
+            └───uniclust30_2017_04
 
 ```
 ## Download and install code
