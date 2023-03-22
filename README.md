@@ -19,6 +19,7 @@ These instructions will get you a copy of the project up and running on your loc
 The dataset can be found in the Dataset/FullDataset directory. The dataset is collected from [1].
 
 
+
 ### Prerequisites
 
 We have tested Dispredict4.0 on Ubuntu 20.04. You would need to install the following software before replicating this framework in your local or server machine. 
@@ -47,9 +48,22 @@ We have tested Dispredict4.0 on Ubuntu 20.04. You would need to install the foll
     For more details, visit: https://python-poetry.org/docs/
 
 4. Docker
-    The feature extraction part depends on many other tools. So we created a docker image to easily extract features without any setup. It might take quit some time to get all the features.
 
-  
+    The feature extraction part depends on many other tools. So we created a docker image to extract features easily without any setup. It might take quite some time to get all the features.
+
+6. Protein Databases
+
+    The tool depends on the nr and uniclust30_2017_04 databases. The database should be placed in the following directory structure.
+
+```
+project
+│───README.md    
+│
+└───Databases
+        nr
+        uniclust30_2017_04
+
+```
 ## Download and install code
 
 - Retrieve the code
