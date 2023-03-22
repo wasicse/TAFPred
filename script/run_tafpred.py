@@ -237,6 +237,10 @@ def checkcontainerstatus(containername):
 # collect features from docker container
 def collectfeatures(containername):
 
+    print("Removing old features from host")
+    bashCommand="rm -rf ../Features/"
+    output = subprocess.check_output(['bash','-c', bashCommand])
+    print(output.decode('utf-8')) 
 
     print("Pulling docker image")
     bashCommand="docker pull wasicse/featureextract:1.0"
@@ -249,29 +253,33 @@ def collectfeatures(containername):
     print(output.decode('utf-8')) 
     if checkcontainerstatus(containername):
         print("Creating container")
-        bashCommand="docker run -itd -v "+os.getcwd()+"/Databases:/opt/common --name "+containername+"  wasicse/featureextract:1.0"
+        bashCommand="docker run -itd -v "+os.getcwd()+"/Databases:/opt/FeatureExtractionDocker/Databases --name "+containername+"  wasicse/featureextract:2.0"
         print(bashCommand)
         output = subprocess.check_output(['bash','-c', bashCommand])
         print(output.decode('utf-8')) 
     else:
-        print("Starting container")
-        bashCommand="docker start "+containername
-        print(bashCommand)
-        output = subprocess.check_output(['bash','-c', bashCommand])
-        print(output.decode('utf-8'))    
+        # print("Starting container")
+        # bashCommand="docker start "+containername
+        # print(bashCommand)
+        # output = subprocess.check_output(['bash','-c', bashCommand])
+        # print(output.decode('utf-8'))   
+        pass 
+    
+    print("Removing old features from container")
+    bashCommand="docker exec "+containername+"  bash  -c \"rm -rf /opt/FeatureExtractionDocker/Dataset/example/*\""
+    output = subprocess.check_output(['bash','-c', bashCommand])
+    print(output.decode('utf-8')) 
 
     print("Copying files to container")
     bashCommand="docker cp ../Dataset/example/ "+containername+":/opt/FeatureExtractionDocker/Dataset"
     output = subprocess.check_output(['bash','-c', bashCommand])
     print(output.decode('utf-8')) 
 
-    print("Removing old features")
-    bashCommand="rm -rf ../Features/"
-    output = subprocess.check_output(['bash','-c', bashCommand])
-    print(output.decode('utf-8')) 
+
 
     print("Running feature extraction. It might take a while to complete. and depends on the number of sequences in the input file.")
-    bashCommand= "docker exec "+containername+" bash -c \"cd /opt/FeatureExtractionDocker/FeatureExtractTool ; /opt/.pyenv/versions/miniconda3-3.9-4.10.3/envs/feat/bin/python runScript.py\""
+    bashCommand= "docker exec "+containername+" bash --login -c \"cd /opt/FeatureExtractionDocker/FeatureExtractTool ; /opt/.pyenv/versions/miniconda3-3.9-4.10.3/envs/feat/bin/python runScript.py\""
+    print(bashCommand)
     output = subprocess.check_output(['bash','-c', bashCommand])
     print(output.decode('utf-8')) 
     

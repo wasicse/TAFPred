@@ -4,4 +4,33 @@ AUTHOR DisPredict2: Sumaiya Iqbal and Md Tamjidul Hoque, Output: AA O/D Disorder
 REMARK SVM
 METHOD SVM (SL477)
 MODEL  1
+V  D  0.842390 
+S  D  0.853029 
+C  D  0.852983 
+E  D  0.855745 
+D  D  0.844250 
+C  D  0.875024 
+P  D  0.909269 
+E  D  0.903488 
+H  D  0.883248 
+C  D  0.881183 
+S  D  0.855419 
+T  D  0.807031 
+Q  D  0.696245 
+K  D  0.543576 
+A  O  0.489823 
+Q  O  0.442926 
+A  D  0.582069 
+K  D  0.751319 
+C  D  0.751702 
+D  D  0.783121 
+N  D  0.828479 
+D  D  0.813610 
+K  D  0.784252 
+C  D  0.721643 
+V  D  0.695326 
+C  D  0.658276 
+E  D  0.700593 
+P  D  0.677307 
+I  D  0.687945 
 END

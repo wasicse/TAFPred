@@ -83,7 +83,7 @@ poetry install
 Then execute the following command to run TAFPred from the script directory on the example dataset. You need to change the input of the Dataset/example directory to get prediction for new protein sequences.
 
 ```
-cd script && poetry run python run_tafpred.py -f "taffeaturesv1" -o "./output/"
+cd script && poetry run python run_tafpred.py -f "taffeaturesv10" -o "./output/"
 
 ```
 
@@ -96,5 +96,5 @@ Md Wasi Ul Kabir, Md Tamjidul Hoque. For any issue please contact: Md Tamjidul H
 
 ## References
 
-1. Zhang, Tuo, Eshel Faraggi, and Yaoqi Zhou. “Fluctuations of Backbone Torsion Angles Obtained from NMR-Determined Structures and Their Prediction: Fluctuations of Backbone Torsion Angles.” Proteins: Structure, Function, and Bioinformatics 78, no. 16 (December 2010): 3353–62. https://doi.org/10.1002/prot.22842.
+1. Zhang, Tuo, Eshel Faraggi, and Yaoqi Zhou. “Fluctuations of backbone torsion angles obtained from NMR-determined structures and their prediction” Proteins: Structure, Function, and Bioinformatics 78, no. 16 (December 2010): 3353–62. https://doi.org/10.1002/prot.22842.
 

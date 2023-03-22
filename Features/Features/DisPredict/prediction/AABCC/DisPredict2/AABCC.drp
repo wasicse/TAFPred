@@ -1,5 +1,5 @@
 PFRMAT DR
-TARGET 1ABZ-A
+TARGET AABCC
 AUTHOR DisPredict2: Sumaiya Iqbal and Md Tamjidul Hoque, Output: AA O/D DisorderProbability(0.5 - 1.0)
 REMARK SVM
 METHOD SVM (SL477)

@@ -1,5 +1,5 @@
 Secondary Structure Prediction Output (Part of REGAd3p ASA Prediction)
-TARGET: 1ABZ-A, Length: 38
+TARGET: AABCC, Length: 38
 
 SR#  AA  SSp  pCoil          pBeta          pHelix
 1    D   C    0.796664       0.0223353      0.181001
