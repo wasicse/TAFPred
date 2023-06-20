@@ -53,7 +53,7 @@ We have tested Dispredict4.0 on Ubuntu 20.04. You would need to install the foll
 
 6. Protein Databases
 
-    The tool depends on the nr and uniclust30_2017_04 databases. The database should be placed in the following directory structure.
+    The tool depends on the nr and uniclust30_2017_04 databases. The database should be placed in the following directory structure. Alternatively, it is possible to pass the database path as parameters.
 
 ```
 project
@@ -81,10 +81,11 @@ poetry install
 
 ```
 
-Then execute the following command to run TAFPred from the script directory on the example dataset. You need to change the input of the Dataset/example directory to get prediction for new protein sequences.
+Then execute the following command to run TAFPred from the script directory on the example dataset. You need to change the input of the Dataset/example directory to get prediction for new protein sequences and replace DATABASE_PATH with the absoutue path of the databases e.g, "/home/wasi/TAFPred/script/Databases/"
 
 ```
-cd script && poetry run python run_tafpred.py -f "taffeaturesv10" -o "./output/"
+cd script
+poetry run python run_tafpred.py -f "taffeaturesv10" -o "./output/" -d "DATABASE_PATH"
 
 ```
 

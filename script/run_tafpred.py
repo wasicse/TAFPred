@@ -235,7 +235,7 @@ def checkcontainerstatus(containername):
         return True
 
 # collect features from docker container
-def collectfeatures(containername):
+def collectfeatures(containername, database_path):
 
     print("Removing old features from host")
     bashCommand="rm -rf ../Features/"
@@ -253,16 +253,16 @@ def collectfeatures(containername):
     print(output.decode('utf-8')) 
     if checkcontainerstatus(containername):
         print("Creating container")
-        bashCommand="docker run -itd -v "+os.getcwd()+"/Databases:/opt/FeatureExtractionDocker/Databases --name "+containername+"  wasicse/featureextract:2.0"
+        bashCommand="docker run -itd -v "+database_path+":/opt/FeatureExtractionDocker/Databases --name "+containername+"  wasicse/featureextract:2.0"
         print(bashCommand)
         output = subprocess.check_output(['bash','-c', bashCommand])
         print(output.decode('utf-8')) 
     else:
-        # print("Starting container")
-        # bashCommand="docker start "+containername
-        # print(bashCommand)
-        # output = subprocess.check_output(['bash','-c', bashCommand])
-        # print(output.decode('utf-8'))   
+        print("Starting container")
+        bashCommand="docker start "+containername
+        print(bashCommand)
+        output = subprocess.check_output(['bash','-c', bashCommand])
+        print(output.decode('utf-8'))   
         pass 
     
     print("Removing old features from container")
@@ -296,36 +296,49 @@ def collectfeatures(containername):
 
 
 if __name__ == "__main__":  
+
     parent_path = str(Path(__file__).resolve().parents[1])
     print("Parent Dir",parent_path)
 
     parser = OptionParser()
     parser.add_option("-f", "--containerName", dest="containerName", help="Container Name.", default="taffeaturesv1")
     parser.add_option("-o", "--output_path", dest="output_path", help="Path to output.", default=parent_path+'/output/')
-
+    parser.add_option("-d", "--database_path", dest="database_path", help="Path to database.", default=parent_path+'/script/Databases/')
+    
     (options, args) = parser.parse_args()
+    print("Database Path:",options.database_path)
+    
+    #Check if required Databases are in  script/Databases directory.    
+       
+    # Getting the list of directories
+    dir = os.listdir(options.database_path)
+      
+    # Checking if the list is empty or not
+    if len(dir) == 0:
+        print("Please download the nr and uniclust30_2017_04 databases in script/Databases directory  ")
+    else:       
 
-    print("Container Name:",options.containerName)
-    print("Output Path:",options.output_path)
 
-    #Print features options
-    PrintP=True
-    #Add label to features
-    label=True
+        print("Container Name:",options.containerName)
+        print("Output Path:",options.output_path)
+        #Print features options
+        PrintP=True
+        #Add label to features
+        label=True
 
-    # Collect features by running the docker container
-    collectfeatures(options.containerName)
+        # Collect features by running the docker container
+        collectfeatures(options.containerName, options.database_path )
 
-    # Merge features
-    merge_shape=mergedata(PrintP,label)
+        # Merge features
+        merge_shape=mergedata(PrintP,label)
 
-    # Windowing 
-    startwindow_size=3
-    endwindow_size=3
-    windowing(str(merge_shape[1]-1),startwindow_size,endwindow_size)
+        # Windowing 
+        startwindow_size=3
+        endwindow_size=3
+        windowing(str(merge_shape[1]-1),startwindow_size,endwindow_size)
 
-    # Get prediction from the windowed features
-    getprediction()
+        # Get prediction from the windowed features
+        getprediction()
     
 
 
