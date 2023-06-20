@@ -94,7 +94,7 @@ poetry run python run_tafpred.py -f "taffeaturesv10" -o "./output/" -d "DATABASE
 
 ## Authors
 
-Md Wasi Ul Kabir, Md Tamjidul Hoque. For any issue please contact: Md Tamjidul Hoque, thoque@uno.edu 
+Md Wasi Ul Kabir, Duaa Mohammad Alawad, Avdesh Mishra, and Md Tamjidul Hoque. For any issue please contact: Md Tamjidul Hoque, thoque@uno.edu 
 
 ## References
 
