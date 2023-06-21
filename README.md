@@ -22,7 +22,7 @@ The dataset can be found in the Dataset/FullDataset directory. The dataset is co
 
 ### Prerequisites
 
-We have tested Dispredict4.0 on Ubuntu 20.04. You would need to install the following software before replicating this framework in your local or server machine. 
+We have tested TAFPred on Ubuntu 20.04. You would need to install the following software before replicating this framework in your local or server machine. 
 
 1. pyenv latest version
     ```
