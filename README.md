@@ -39,7 +39,13 @@ We have tested TAFPred on Ubuntu 20.04. You would need to install the following 
     ```
 
     For more details, visit: https://github.com/pyenv/pyenv
-
+    
+    Alternatively, Python version 3.9.5 can be installed using Anaconda.
+    
+    ```
+    conda create -n py39 python=3.9.5 
+    conda activate py39
+    ``` 
 3. Poetry version 1.3.2
 
     ```
@@ -70,7 +76,7 @@ project
 - Retrieve the code
 
 ```
-github clone https://github.com/wasicse/TAFPred.git
+git clone https://github.com/wasicse/TAFPred.git
 
 ```
 
@@ -85,7 +91,7 @@ Then execute the following command to run TAFPred from the script directory on t
 
 ```
 cd script
-poetry run python run_tafpred.py -f "taffeaturesv10" -o "./output/" -d "DATABASE_PATH"
+poetry run python run_tafpred.py -f "taffeatures" -o "./output/" -d "DATABASE_PATH"
 
 ```
 
